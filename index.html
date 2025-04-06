@@ -38,11 +38,61 @@
               <a href="https://x.com/"> X </a>
               </p>
             </td>
-            <td style="padding:2.5%;width:26.5%;max-width:40%;vertical-align:top">
+<!--             <td style="padding:2.5%;width:26.5%;max-width:40%;vertical-align:top">
               <img style="width:100%;max-width:100%;margin-top:2.5em;border-radius:15px" alt="profile photo" src="images/qingyu fan.jpg" class="hoverZoomLink">
+            </td> -->
+            <td style="padding:2.5%;width:26.5%;max-width:40%;vertical-align:top">
+              <!-- 轮播图容器 -->
+              <div class="slideshow-container" style="position: relative; width:100%; max-width:100%; margin-top:2.5em; border-radius:15px;">
+              
+                <!-- 每一张幻灯片 -->
+                <div class="mySlides" style="display: none;">
+                  <img src="images/qingyu_fan.jpg" style="width:100%; border-radius:15px;">
+                </div>
+                <div class="mySlides" style="display: none;">
+                  <img src="images/qingyu_fan.jpg" style="width:100%; border-radius:15px;">
+                </div>
+                <div class="mySlides" style="display: none;">
+                  <img src="images/qingyu_fan.jpg" style="width:100%; border-radius:15px;">
+                </div>
+              
+                <!-- 左右翻页按钮 -->
+                <a class="prev" style="cursor:pointer; position:absolute; top:50%; left:0; transform: translateY(-50%); color:black; font-weight:bold; font-size:18px; padding:8px; user-select:none;" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" style="cursor:pointer; position:absolute; top:50%; right:0; transform: translateY(-50%); color:black; font-weight:bold; font-size:18px; padding:8px; user-select:none;" onclick="plusSlides(1)">&#10095;</a>
+              </div>
             </td>
+
           </tr>
         </tbody></table>
+        <script>
+          let slideIndex = 1;
+          showSlides(slideIndex);
+        
+          // 翻页函数，n=1 向后翻，n=-1 向前翻
+          function plusSlides(n) {
+            showSlides(slideIndex += n);
+          }
+        
+          // 展示指定的幻灯片
+          function showSlides(n) {
+            const slides = document.getElementsByClassName("mySlides");
+            // 若翻到末尾则回到第一张
+            if (n > slides.length) {
+              slideIndex = 1;
+            }
+            // 若翻到最前则回到最后一张
+            if (n < 1) {
+              slideIndex = slides.length;
+            }
+            // 先全部隐藏
+            for (let i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none";
+            }
+            // 显示当前 slideIndex 的图片
+            slides[slideIndex - 1].style.display = "block";
+          }
+        </script>
+
 
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;margin-bottom:-1.0em"><tbody>
             <tr>
